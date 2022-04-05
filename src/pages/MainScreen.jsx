@@ -1,30 +1,54 @@
-import React from 'react';
+/* eslint-disable react/prop-types */
+import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { postInfo as postInfoAction } from '../actions';
+import PostForm from '../components/PostForm';
+import PostList from '../components/PostList';
+import useForm from '../hooks/useForm';
 // import propTypes from 'prop-types';
 
-function MainScreen() {
+function MainScreen(props) {
+  const [post, setPostInfo] = useState({
+    title: '',
+    username: '',
+    content: '',
+    date: '',
+  });
+
+  const [handleChange, handleSubmit] = useForm(post);
+
+  const sendPostInfoToRedux = async () => {
+    const { name, postInfo } = props;
+
+    // Add username and date before send to Redux
+    const newPost = { ...post };
+    newPost.username = name;
+    newPost.date = new Date();
+    setPostInfo(newPost);
+
+    await postInfo(newPost);
+  };
+
   return (
     <div>
-      <div className="post-form">
-        <form>
-          <p>{'What\'s on your mind?'}</p>
-          <label htmlFor="title">
-            Title
-            <input type="text" />
-          </label>
-          <label htmlFor="content">
-            Content
-            <input type="text" />
-          </label>
-          <button type="button">Create</button>
-        </form>
-      </div>
-      <div className="post-list" />
+      <PostForm
+        onChange={handleChange(setPostInfo)}
+        onSubmit={handleSubmit(sendPostInfoToRedux)}
+      />
+      <PostList />
     </div>
   );
 }
 
-// MainScreen.PropTypes = {
-//   propTypes,
-// };
+const mapStateToProps = (state) => {
+  const { user } = state;
+  return user;
+};
 
-export default MainScreen;
+const mapDispatchToProps = (dispatch) => ({
+  postInfo: (data) => (
+    dispatch(postInfoAction(data))
+  ),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(MainScreen);
