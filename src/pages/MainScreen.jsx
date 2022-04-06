@@ -1,6 +1,8 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
+
 import { postInfo as postInfoAction } from '../actions';
 import PostForm from '../components/PostForm';
 import PostList from '../components/PostList';
@@ -9,6 +11,7 @@ import useForm from '../hooks/useForm';
 
 function MainScreen(props) {
   const [post, setPostInfo] = useState({
+    id: '',
     title: '',
     username: '',
     content: '',
@@ -22,10 +25,11 @@ function MainScreen(props) {
 
     // Add username and date before send to Redux
     const newPost = { ...post };
+    newPost.id = uuidv4();
     newPost.username = name;
     newPost.date = new Date();
+    newPost.created = new Date();
     setPostInfo(newPost);
-
     await postInfo(newPost);
   };
 
