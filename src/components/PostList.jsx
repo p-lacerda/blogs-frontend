@@ -6,21 +6,20 @@ import PostCard from './PostCard';
 
 function PostList(props) {
   const { allPosts } = props;
-  console.log(allPosts);
 
   return (
     <div className="post-list">
-      There is not posts yet. Create the first!
-      { allPosts === undefined ? <p>Tem nada</p> : allPosts.map(({
-        title, username, content, date,
-      }) => (
-        <PostCard
-          title={title}
-          username={username}
-          content={content}
-          date={date}
-        />
-      ))}
+      { allPosts.length === 0
+        ? <p>There is not posts yet. Create the first!</p> : allPosts.map(({
+          title, username, content, date,
+        }) => (
+          <PostCard
+            title={title}
+            username={username}
+            content={content}
+            date={date}
+          />
+        ))}
     </div>
   );
 }
