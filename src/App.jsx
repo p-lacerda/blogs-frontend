@@ -2,14 +2,17 @@ import React, { } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
 
-import MainScreen from './pages/MainScreen';
 import SignUp from './pages/SignUp';
+import MainScreen from './pages/MainScreen';
+import ProtectedRoutes from './ProtectedRoutes';
 
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<MainScreen />} />
-      <Route path="login" element={<SignUp />} />
+      <Route element={<ProtectedRoutes />}>
+        <Route path="/" element={<MainScreen />} />
+      </Route>
+      <Route path="signup" element={<SignUp />} />
     </Routes>
   );
 }

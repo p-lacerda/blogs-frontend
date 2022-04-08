@@ -5,20 +5,20 @@ function PostForm({ onChange, onSubmit }) {
   return (
     <div className="post-form">
       <form>
-        <div className="post-header">
+        <div className="form-header">
           <p>{'What\'s on your mind?'}</p>
         </div>
-        <div className="post-body">
+        <div className="form-body">
           <label htmlFor="title">
-            Title
+            <p>Title</p>
             <input type="text" name="title" onChange={(e) => onChange(e)} />
           </label>
           <label htmlFor="content">
-            Content
+            <p>Content</p>
             <input type="text" name="content" onChange={(e) => onChange(e)} />
           </label>
         </div>
-        <div className="post-bottom">
+        <div className="form-bottom">
           <button
             type="button"
             onClick={(e) => onSubmit(e)}

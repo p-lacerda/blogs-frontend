@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import moment from 'moment';
 import { connect } from 'react-redux';
 import useForm from '../hooks/useForm';
@@ -10,17 +10,27 @@ import {
 
 import ModalEditItem from './ModalEditItem';
 import ModalDeleteItem from './ModalDeleteItem';
-import './Modal.css';
+import '../styles/Modal.css';
 
 function PostCard(props) {
   const [editPost, setEditingPost] = useState({
     title: '',
     content: '',
   });
+
+  const createTimeAgo = (userDate) => moment(userDate).fromNow();
+  const { date } = props;
+  const [timeAgo, setTimeAgo] = useState(createTimeAgo(date));
   const [handleChange] = useForm(editPost);
   const [showEdit, setShowEdit] = useState(false);
   const [showDelete, setShowDelete] = useState(false);
-  const createTimeAgo = (userDate) => moment(userDate).fromNow();
+
+  useEffect(() => {
+    const interval = setInterval(() => setTimeAgo(createTimeAgo(date)), 60000);
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
 
   const deleteItem = () => {
     const { post: { allPosts }, id, deletePostInfo } = props;
@@ -46,7 +56,7 @@ function PostCard(props) {
 
   const { user: { name: usernameFromState } } = props;
   const {
-    title, username, content, date,
+    title, username, content,
   } = props;
 
   return (
@@ -78,7 +88,7 @@ function PostCard(props) {
       <div>
         <p>{ `@${username}` }</p>
         <p>{ content }</p>
-        <p>{ createTimeAgo(date) }</p>
+        <p>{ timeAgo }</p>
       </div>
     </div>
   );

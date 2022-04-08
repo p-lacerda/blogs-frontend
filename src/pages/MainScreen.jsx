@@ -6,6 +6,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { postInfo as postInfoAction } from '../actions';
 import PostForm from '../components/PostForm';
 import PostList from '../components/PostList';
+import Header from '../components/Header';
 import useForm from '../hooks/useForm';
 // import propTypes from 'prop-types';
 
@@ -34,12 +35,17 @@ function MainScreen(props) {
   };
 
   return (
-    <div>
-      <PostForm
-        onChange={handleChange(setPostInfo)}
-        onSubmit={handleSubmit(sendPostInfoToRedux)}
-      />
-      <PostList />
+    <div className="main-screen">
+      <div className="container">
+        <Header />
+        <div className="post-container">
+          <PostForm
+            onChange={handleChange(setPostInfo)}
+            onSubmit={handleSubmit(sendPostInfoToRedux)}
+          />
+          <PostList />
+        </div>
+      </div>
     </div>
   );
 }

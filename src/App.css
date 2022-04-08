@@ -118,15 +118,82 @@ table {
 /* 
 POST FORM */
 
-.post-form, .post-list {
-  display: flex;
-  margin-left: auto;
-  margin-right: auto;
-  align-items: center;
-  justify-content: center;
+body {
+  background-color: #DDDDDD;
 }
 
-.post-header {
+.main-screen {
+  display: flex;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #FFFFFF;
+}
+
+.post-container {
+  padding: 20px 35px;
+}
+
+.header {
+  display: flex;
+  background-color: black;
+  color: #DDDDDD;
+  font-weight: 700;
+  font-size: 1.5rem;
+  padding: 20px 35px;
+}
+
+.post-form, .post-list {
+  background-color: #FFFFFF;
+  margin-bottom: 1.5rem;
+}
+
+/* POST CARD */
+.post-card {
+  padding: 10px;
+  border: #DDDDDD 1px solid;
+  border-radius: .2rem;
+  margin-bottom: 1rem;
+
+}
+
+/* POST FORM */
+.post-form {
+  margin-top: 1rem;
+  border: #DDDDDD 1px solid;
+  padding: 15px;
+  border-radius: .2rem;
+}
+
+.form-header {
+  margin: 15px 0px;
   font-weight: 700;
   font-size: 1.2rem;
+}
+
+.form-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-body label {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0px;
+}
+
+.form-body p {
+  margin-bottom: .5rem;
+}
+
+.form-body input {
+  padding: .4rem;
+  border-radius: .2rem;
+  border: 1px solid #777777;
 }
