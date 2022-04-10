@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
 import '../styles/PostForm.css';
 
@@ -11,7 +10,7 @@ function PostForm({ onChange, onSubmit, title, content }) {
         </div>
         <div className="form-body">
           <label htmlFor="title">
-            <p>Title</p>
+            Title
             <input
               type="text"
               id="form-title"
@@ -22,7 +21,7 @@ function PostForm({ onChange, onSubmit, title, content }) {
             />
           </label>
           <label htmlFor="content">
-            <p>Content</p>
+            Content
             <textarea
               id="form-content"
               name="content"

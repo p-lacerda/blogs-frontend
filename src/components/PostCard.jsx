@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React, { useEffect, useState } from 'react';
 import moment from 'moment';
 import { connect } from 'react-redux';
@@ -13,6 +12,7 @@ import Remove from '../images/Remove.svg';
 
 import ModalEditItem from './ModalEditItem';
 import ModalDeleteItem from './ModalDeleteItem';
+import '../styles/PostCard.css';
 import '../styles/Modal.css';
 
 function PostCard(props) {

@@ -49,43 +49,8 @@ table {
 
 /* Página de Login */
 
-.login-page {
-  display: flex;
-  height: 100vh;
-  align-items: center;
-  justify-content: center;
-}
-
-.login-container {
-  display: flex;
-  flex-direction: column;
-  background-color: #F9F9F9;
-  border: #DDDDDD 1px solid;
-  border-radius: 5px;
-  width: 500px;
-  padding: 20px;
-}
-
-.login-container h4 {
-  margin-bottom: 1rem;
-  font-size: 23px;
-  font-weight: 700;
-}
-
-.login-container p {
-  font-weight: 400;
-  font-size: 16px;
-  margin-bottom: 1rem;
-}
-
-.login-container input {
-  padding: 5px;
-  margin-bottom: .5rem;
-}
-
-.login-container a {
-  margin-top: 1rem;
-  align-self: flex-end;
+* {
+  font-family: 'Roboto', 'Arial', sans-serif;
 }
 
 .button-secondary {
@@ -97,7 +62,6 @@ table {
   align-items: center;
   font-weight: 500;
   font-size: 14px;
-  font-family: 'Roboto';
   background-color: #fff;
   border:#252525 2px solid;
   margin-top: 10px;
@@ -114,7 +78,6 @@ table {
   align-items: center;
   font-weight: 500;
   font-size: 14px;
-  font-family: 'Roboto';
   background-color: black;
   border: none;
   margin-top: 10px;
@@ -132,13 +95,12 @@ table {
   align-items: center;
   font-weight: 500;
   font-size: 14px;
-  font-family: 'Roboto';
   border: none;
   margin-top: 10px;
   color: #fff;
 }
 /* 
-POST FORM */
+MAIN SCREEN */
 
 body {
   background: linear-gradient(90deg, rgba(136,88,240,1) 0%, rgba(69,184,215,1) 100%); 
@@ -174,80 +136,4 @@ body {
 .post-form, .post-list {
   background-color: #FFFFFF;
   margin-bottom: 1.5rem;
-}
-
-/* POST CARD */
-.post-card {
-  padding: 15px;
-  background-color: #F9F9F9;
-  border: #DDDDDD 1px solid;
-  border-radius: .2rem;
-  margin-bottom: 1rem;
-}
-
-.post-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 10px;
-}
-
-.post-title {
-  display: flex;
-  word-break: break-all;
-  word-wrap: break-word;
-  font-weight: 700;
-  font-size: 20px;
-}
-
-.post-info {
-  display: flex;
-  color: #757575;
-  font-weight: 500;
-  font-size: 13px;
-  margin-bottom: 15px;
-}
-
-.post-icons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.button-icon {
-  background-color: #252525;
-  border-style: none;
-  padding: 5px 8px;
-  border-radius: 5px;
-  margin: 4px;
-  cursor: pointer;
-}
-
-.button-icon img {
-  width: 25px;
-  height: 25px;
-}
-
-.post-content {
-  margin-bottom: 15px;
-  word-break: break-all;
-  word-wrap: break-word;
-  line-height: normal;
-}
-
-.post-empty {
-  display: flex;
-  font-size: 18px;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.post-first {
-  width: 250px;
-  margin-bottom: 10px;
-}
-
-#be-the-first {
-  font-weight: 700;
 }

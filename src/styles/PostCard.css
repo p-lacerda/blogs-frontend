@@ -1,0 +1,75 @@
+.post-card {
+  padding: 15px;
+  background-color: #F9F9F9;
+  border: #DDDDDD 1px solid;
+  border-radius: .2rem;
+  margin-bottom: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.post-title {
+  display: flex;
+  word-break: break-all;
+  word-wrap: break-word;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.post-info {
+  display: flex;
+  color: #757575;
+  font-weight: 500;
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+.post-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-icon {
+  background-color: #252525;
+  border-style: none;
+  padding: 5px 8px;
+  border-radius: 5px;
+  margin: 4px;
+  cursor: pointer;
+}
+
+.button-icon img {
+  width: 25px;
+  height: 25px;
+}
+
+.post-content {
+  margin-bottom: 15px;
+  word-break: break-all;
+  word-wrap: break-word;
+  line-height: normal;
+}
+
+.post-empty {
+  display: flex;
+  font-size: 18px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.post-first {
+  width: 250px;
+  margin-bottom: 10px;
+}
+
+#be-the-first {
+  font-weight: 700;
+}

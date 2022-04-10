@@ -1,10 +1,10 @@
-/* eslint-disable react/prop-types */
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { userInfo as userInfoAction } from '../actions';
 import LoginContainer from '../components/LoginContainer';
 import useForm from '../hooks/useForm';
+import '../styles/Signup.css';
 // import propTypes from 'prop-types';
 
 function SignUp(props) {
