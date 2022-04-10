@@ -14,13 +14,6 @@ npm start
 
 
 #### Screenshots
-<div style="display: inline-block">
-  <p>Mobile First</p>
- 
-
-  <p>Desktop</p>
-
-</div>
 
 Mobile first | Desktop
 :-------------------------:|:-------------------------:
