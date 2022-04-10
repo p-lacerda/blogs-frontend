@@ -6,16 +6,17 @@ function LoginContainer({ user, onChange, onSubmit }) {
   return (
     <div className="login-container">
       <h4>Welcome to CodeLeap network!</h4>
-      <p>Please enter your username</p>
+      <p>Please enter your username:</p>
       <input
         name="name"
         type="text"
+        id="form-title"
         placeholder="John Doe"
         onChange={(e) => onChange(e)}
       />
       <button
         type="button"
-        className={name.length === 0 ? 'button-form-disabled' : 'button-form'}
+        className={name.length === 0 ? 'button-primary-disabled' : 'button-primary'}
         disabled={name.length === 0}
         onClick={(e) => onSubmit(e)}
       >

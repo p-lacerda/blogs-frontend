@@ -2,7 +2,7 @@
 import React from 'react';
 
 function ModalEditItem({
-  show, onClose, onChange, editItem,
+  show, onClose, onChange, editItem, title, content
 }) {
   return (
     !show ? null
@@ -14,20 +14,23 @@ function ModalEditItem({
             </div>
             <div className="modal-body">
               <label htmlFor="title">
-                Title
+                <p>Title</p>
                 <input
                   type="text"
-                  placeholder="Hello world"
+                  id="form-title"
                   name="title"
+                  defaultValue={title}
                   onChange={(e) => onChange(e)}
                 />
               </label>
               <label htmlFor="content">
-                Content
-                <input
+                <p>Content</p>
+                <textarea
+                  resize="none"
+                  id="form-content"
                   type="text"
-                  placeholder="Content here"
                   name="content"
+                  defaultValue={content}
                   onChange={(e) => onChange(e)}
                 />
               </label>

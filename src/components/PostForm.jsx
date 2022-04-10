@@ -12,11 +12,24 @@ function PostForm({ onChange, onSubmit, title, content }) {
         <div className="form-body">
           <label htmlFor="title">
             <p>Title</p>
-            <input type="text" id="form-title" value={title} name="title" onChange={(e) => onChange(e)} />
+            <input
+              type="text"
+              id="form-title"
+              value={title}
+              name="title"
+              onChange={(e) => onChange(e)}
+              placeholder="Type your post title..."
+            />
           </label>
           <label htmlFor="content">
             <p>Content</p>
-            <textarea id="form-content" name="content" value={content} onChange={(e) => onChange(e)} />
+            <textarea
+              id="form-content"
+              name="content"
+              value={content}
+              onChange={(e) => onChange(e)}
+              placeholder="Type your post content..."
+            />
           </label>
         </div>
         <div className="form-bottom">
@@ -29,7 +42,7 @@ function PostForm({ onChange, onSubmit, title, content }) {
             }
             className={
               title.length === 0 
-  || content.length === 0 ? 'button-form-disabled' : 'button-form'
+  || content.length === 0 ? 'button-primary-disabled' : 'button-primary'
             }
           >
             Create

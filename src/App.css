@@ -51,7 +51,6 @@ table {
 
 .login-page {
   display: flex;
-  background-color: #DDDDDD;
   height: 100vh;
   align-items: center;
   justify-content: center;
@@ -60,23 +59,28 @@ table {
 .login-container {
   display: flex;
   flex-direction: column;
-  background-color: #FFFFFF;
+  background-color: #F9F9F9;
+  border: #DDDDDD 1px solid;
+  border-radius: 5px;
   width: 500px;
   padding: 20px;
 }
 
 .login-container h4 {
-  margin-bottom: 2rem;
-  font-size: large;
+  margin-bottom: 1rem;
+  font-size: 23px;
   font-weight: 700;
 }
 
 .login-container p {
+  font-weight: 400;
+  font-size: 16px;
   margin-bottom: 1rem;
 }
 
 .login-container input {
   padding: 5px;
+  margin-bottom: .5rem;
 }
 
 .login-container a {
@@ -84,14 +88,33 @@ table {
   align-self: flex-end;
 }
 
-.button-form {
+.button-secondary {
   padding: 15px;
   border-radius: 5px;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-weight: 700;
+  font-weight: 500;
+  font-size: 14px;
+  font-family: 'Roboto';
+  background-color: #fff;
+  border:#252525 2px solid;
+  margin-top: 10px;
+  color: #252525;
+  cursor: pointer;
+}
+
+.button-primary {
+  padding: 15px;
+  border-radius: 5px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  font-size: 14px;
+  font-family: 'Roboto';
   background-color: black;
   border: none;
   margin-top: 10px;
@@ -99,8 +122,7 @@ table {
   cursor: pointer;
 }
 
-
-.button-form-disabled {
+.button-primary-disabled {
   background-color: gray;
   padding: 15px;
   border-radius: 5px;
@@ -108,7 +130,9 @@ table {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-weight: 700;
+  font-weight: 500;
+  font-size: 14px;
+  font-family: 'Roboto';
   border: none;
   margin-top: 10px;
   color: #fff;
@@ -117,7 +141,7 @@ table {
 POST FORM */
 
 body {
-  background-color: #DDDDDD;
+  background: linear-gradient(90deg, rgba(136,88,240,1) 0%, rgba(69,184,215,1) 100%); 
 }
 
 .main-screen {

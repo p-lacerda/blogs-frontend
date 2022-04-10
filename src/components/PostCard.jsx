@@ -16,9 +16,10 @@ import ModalDeleteItem from './ModalDeleteItem';
 import '../styles/Modal.css';
 
 function PostCard(props) {
+  const { title, content } = props;
   const [editPost, setEditingPost] = useState({
-    title: '',
-    content: '',
+    title: title,
+    content: content,
   });
 
   const createTimeAgo = (userDate) => moment(userDate).fromNow();
@@ -59,7 +60,7 @@ function PostCard(props) {
 
   const { user: { name: usernameFromState } } = props;
   const {
-    title, username, content,
+    username
   } = props;
 
   return (
@@ -82,6 +83,8 @@ function PostCard(props) {
                   onClose={() => setShowEdit(false)}
                   onChange={handleChange(setEditingPost)}
                   editItem={() => editItem()}
+                  title={title}
+                  content={content}
                 />
               </div>
             )

@@ -15,11 +15,23 @@
   background-color: #fff;
 }
 
+.modal-content label {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0px;
+}
+
+.modal-content p {
+  margin-bottom: 10px;
+}
+
 .modal-header, .modal-footer {
   padding: 10px;
 }
 
 .modal-body {
+  display: flex;
+  flex-direction: column;
   padding: 10px;
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
