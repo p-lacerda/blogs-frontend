@@ -32,8 +32,17 @@ function MainScreen(props) {
     newPost.created = new Date();
     setPostInfo(newPost);
     await postInfo(newPost);
+
+    setPostInfo({
+      id: '',
+      title: '',
+      username: '',
+      content: '',
+      date: '',
+    })
   };
 
+  const { title, content } = post;
   return (
     <div className="main-screen">
       <div className="container">
@@ -42,6 +51,8 @@ function MainScreen(props) {
           <PostForm
             onChange={handleChange(setPostInfo)}
             onSubmit={handleSubmit(sendPostInfoToRedux)}
+            title={title}
+            content={content}
           />
           <PostList />
         </div>

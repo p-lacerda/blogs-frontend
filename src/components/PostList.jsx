@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { connect } from 'react-redux';
+import firstPerson from '../images/youAreTheFirst.svg';
 
 import PostCard from './PostCard';
 
@@ -12,7 +13,12 @@ function PostList(props) {
   return (
     <div className="post-list">
       { allPosts.length === 0
-        ? <p>There is not posts yet. Create the first!</p> : allPosts
+        ? 
+        <div className='post-empty'>
+          <img src={firstPerson} className="post-first" alt="Image of a excited person out a box" />
+          <p>There is not posts yet. <strong id="be-the-first">Be the first!</strong></p> 
+        </div>
+        : allPosts
           .map(({
             title, username, content, date, id,
           }) => (

@@ -1,0 +1,44 @@
+/* POST FORM */
+
+.form-header {
+  margin: 15px 0px;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.form-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-body label {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0px;
+}
+
+.form-body p {
+  color: #3D3D3D;
+  font-weight: 500;
+  margin-bottom: .5rem;
+}
+
+#form-title {
+  padding: .5rem;
+  height: 1.5rem;
+  border-radius: .2rem;
+  border: 1px solid #777777;
+}
+
+#form-content {
+  padding: .5rem;
+  height: 4rem;
+  resize: none;
+  border-radius: .2rem;
+  border: 1px solid #777777;
+}
+
+.form-bottom {
+  display: flex;
+  text-align: center;
+}

@@ -8,6 +8,9 @@ import {
   editPostInfo as editPostInfoAction,
 } from '../actions';
 
+import Edit from '../images/Edit.svg';
+import Remove from '../images/Remove.svg';
+
 import ModalEditItem from './ModalEditItem';
 import ModalDeleteItem from './ModalDeleteItem';
 import '../styles/Modal.css';
@@ -61,34 +64,37 @@ function PostCard(props) {
 
   return (
     <div className="post-card">
-      <div>
-        <h4>{ title }</h4>
+      <div className='post-header'>
+        <h4 className='post-title'>{ title }</h4>
         {
           usernameFromState === username
             ? (
-              <>
-                <button type="button" onClick={() => setShowEdit(true)}>Editar</button>
+              <div className='post-icons'>
+                <button type="button" className="button-icon" onClick={() => setShowDelete(true)}><img src={Remove} alt='Button to remove your post'></img></button>
+                <ModalDeleteItem
+                  show={showDelete}
+                  onClose={() => setShowDelete(false)}
+                  deleteItem={() => deleteItem()}
+                />
+                <button type="button" className="button-icon" onClick={() => setShowEdit(true)}><img src={Edit} alt='Button to edit your post'></img></button>
                 <ModalEditItem
                   show={showEdit}
                   onClose={() => setShowEdit(false)}
                   onChange={handleChange(setEditingPost)}
                   editItem={() => editItem()}
                 />
-                <button type="button" onClick={() => setShowDelete(true)}>Remover</button>
-                <ModalDeleteItem
-                  show={showDelete}
-                  onClose={() => setShowDelete(false)}
-                  deleteItem={() => deleteItem()}
-                />
-              </>
+              </div>
             )
             : null
           }
       </div>
       <div>
-        <p>{ `@${username}` }</p>
+        <div className="post-info">
+          <p>{ `@${username} • ${timeAgo}` }</p>
+        </div>
+        <div className="post-content">
         <p>{ content }</p>
-        <p>{ timeAgo }</p>
+        </div>
       </div>
     </div>
   );
